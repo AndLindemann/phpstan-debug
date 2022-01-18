@@ -1,0 +1,26 @@
+parameters:
+    level: 6
+    inferPrivatePropertyTypeFromConstructor: true
+    tmpDir: tmp
+    paths:
+      - batch
+      - include
+      - wwwroot
+      - doctrine
+    excludePaths:
+      analyse:
+        - include/vendor
+    parallel:
+        jobSize: 50
+        maximumNumberOfProcesses: 4
+        minimumNumberOfJobsPerProcess: 5
+    disallowedConstants:
+          # using DIRECTORY_SEPARATOR does not improve anything and breaks testing with vfsStream, so do not use it
+        - constant: 'DIRECTORY_SEPARATOR'
+          message: "use '/' instead"
+          # broken date constants
+        - constant: 'DATE_ISO8601'
+          message: 'use DATE_ATOM instead'
+        - class: 'DateTimeInterface'
+          constant: 'ISO8601'
+          message: 'use DateTimeInterface::ATOM instead'

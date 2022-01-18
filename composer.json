@@ -1,0 +1,22 @@
+{
+  "config": {
+    "platform": {
+      "php": "7.4"
+    },
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true,
+    "vendor-dir": "vendor",
+    "allow-plugins": {
+      "composer/package-versions-deprecated": true,
+      "phpstan/extension-installer": true
+    }
+  },
+  "require-dev": {
+    "phpstan/extension-installer": "^1.1",
+    "phpstan/phpstan": "^1.4",
+    "phpstan/phpstan-doctrine": "^1.1",
+    "spaze/phpstan-disallowed-calls": "^2.2"
+  }
+}
